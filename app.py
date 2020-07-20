@@ -16,7 +16,7 @@ def hello():
 @app.route("/hello", methods=['POST'])
 def hello_name():
     name = request.form['name']
-    return f"Hello {name}"
+    return render_template("hello.html", data={"name": name})
 
 
 if __name__ == '__main__':
