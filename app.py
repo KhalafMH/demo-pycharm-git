@@ -1,17 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return \
-        """
-        <form method='post' action='http://localhost:5000/hello'>
-            <input type='text' name='name' placeholder='Name'>
-            <input type='submit'>
-        </form>
-        """
+    return render_template("index.html")
 
 
 @app.route("/hello")
